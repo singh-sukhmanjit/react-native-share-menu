@@ -1,28 +1,43 @@
 package com.meedan;
 
-import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Collections;
-
-import com.facebook.react.ReactPackage;
+import com.facebook.react.TurboReactPackage;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.uimanager.ViewManager;
+import com.facebook.react.module.model.ReactModuleInfo;
+import com.facebook.react.module.model.ReactModuleInfoProvider;
 
-public class ShareMenuPackage implements ReactPackage {
-  @NonNull
+import java.util.HashMap;
+import java.util.Map;
+
+public class ShareMenuPackage extends TurboReactPackage {
+
+  @Nullable
   @Override
-  public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext reactContext) {
-    List<NativeModule> modules = new ArrayList<>();
-    modules.add(new ShareMenuModule(reactContext));
-    return modules;
+  public NativeModule getModule(String name, ReactApplicationContext reactContext) {
+    if (name.equals(ShareMenuModule.NAME)) {
+      return new ShareMenuModule(reactContext);
+    }
+    return null;
   }
 
-  @NonNull
   @Override
-  public List<ViewManager> createViewManagers(@NonNull ReactApplicationContext reactContext) {
-    return Collections.emptyList();
+  public ReactModuleInfoProvider getReactModuleInfoProvider() {
+    return () -> {
+      final Map<String, ReactModuleInfo> moduleInfos = new HashMap<>();
+      moduleInfos.put(
+              ShareMenuModule.NAME,
+              new ReactModuleInfo(
+                      ShareMenuModule.NAME,
+                      ShareMenuModule.NAME,
+                      false, // canOverrideExistingModule
+                      false, // needsEagerInit
+                      false, // hasConstants
+                      false, // isCxxModule
+                      true // isTurboModule
+              ));
+      return moduleInfos;
+    };
   }
 }

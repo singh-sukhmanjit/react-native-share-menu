@@ -21,7 +21,8 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-public class ShareMenuModule extends ReactContextBaseJavaModule implements ActivityEventListener {
+public class ShareMenuModule extends NativeShareMenuSpec implements ActivityEventListener {
+  public static final String NAME = "ShareMenu";
 
   // Events
   final String NEW_SHARE_EVENT = "NewShareEvent";
@@ -84,7 +85,7 @@ public class ShareMenuModule extends ReactContextBaseJavaModule implements Activ
     return null;
   }
 
-  @ReactMethod
+  @Override
   public void getSharedText(Callback successCallback) {
     Activity currentActivity = getCurrentActivity();
 
@@ -112,13 +113,13 @@ public class ShareMenuModule extends ReactContextBaseJavaModule implements Activ
     clearSharedText();
   }
 
-  @ReactMethod
+  @Override
   public void addListener(String eventName) {
     // Required for RN built in Event Emitter Calls.
   }
 
-  @ReactMethod
-  public void removeListeners(Integer count) {
+  @Override
+  public void removeListeners(double count) {
     // Required for RN built in Event Emitter Calls.
   }
 

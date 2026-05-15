@@ -21,5 +21,14 @@
   },
   "homepage": "https://github.com/meedan/react-native-share-menu",
   "license": "MIT",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": ">=0.83"
+  },
+  "codegenConfig": {
+    "name": "RNShareMenuSpec",
+    "type": "modules",
+    "jsSrcsDir": "src"
+  }
 }

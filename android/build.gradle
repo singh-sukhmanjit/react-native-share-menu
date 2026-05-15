@@ -10,17 +10,19 @@ buildscript {
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'com.facebook.react'
 
 android {
+    namespace "com.meedan"
     compileSdkVersion safeExtGet('compileSdkVersion', rnsmDefaultCompileSdkVersion)
 
     defaultConfig {
         minSdkVersion safeExtGet('minSdkVersion', rnsmDefaultCompileSdkVersion)
-        targetSdkVersion safeExtGet('targetSdkVersion', rnsmDefaultCompileSdkVersion)
+        targetSdkVersion safeExtGet('targetSdkVersion', 34)
         versionCode 1
         versionName "1.0"
         ndk {
-            abiFilters "armeabi-v7a", "x86"
+            abiFilters "armeabi-v7a", "x86", "x86_64", "arm64-v8a"
         }
     }
     lintOptions {
@@ -29,6 +31,5 @@ android {
 }
 
 dependencies {
-    //noinspection GradleDynamicVersion
-    implementation 'com.facebook.react:react-native:+'
+    implementation 'com.facebook.react:react-android'
 }
