@@ -6,7 +6,8 @@
 //
 
 #import "ShareMenuManager.h"
-#import "RNShareMenu-Swift.h"
+// https://github.com/Expensify/react-native-share-menu/issues/313#issuecomment-2074808401
+#import <RNShareMenu/RNShareMenu-Swift.h>
 
 #import <React/RCTLinkingManager.h>
 
