@@ -2,6 +2,8 @@
 
 #import <RNShareMenuSpec/RNShareMenuSpec.h>
 
+@class ShareMenu;
+
 @interface ShareMenu (TurboModule) <NativeShareMenuSpec>
 @end
 

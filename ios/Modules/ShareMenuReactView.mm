@@ -1,5 +1,7 @@
 #import <RNShareMenuSpec/RNShareMenuSpec.h>
 
+@class ShareMenuReactView;
+
 @interface ShareMenuReactView (TurboModule) <NativeShareMenuReactViewSpec>
 @end
 
