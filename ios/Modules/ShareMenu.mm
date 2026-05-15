@@ -3,7 +3,9 @@
 #import <RNShareMenuSpec/RNShareMenuSpec.h>
 #import <RNShareMenu/RNShareMenu-Swift.h>
 
-@class ShareMenu;
+@interface ShareMenu : RCTEventEmitter
+- (void)getSharedText:(RCTResponseSenderBlock)callback;
+@end
 
 @interface ShareMenu (TurboModule) <NativeShareMenuSpec>
 @end
