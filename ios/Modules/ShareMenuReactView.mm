@@ -1,14 +1,5 @@
-#import <React/RCTBridgeModule.h>
-
 #import <RNShareMenuSpec/RNShareMenuSpec.h>
 #import <RNShareMenu/RNShareMenu-Swift.h>
-
-@interface ShareMenuReactView : NSObject
-- (void)dismissExtension:(NSString *)error;
-- (void)openApp;
-- (void)continueInApp:(NSDictionary *)extraData;
-- (void)data:(RCTPromiseResolveBlock)resolver reject:(RCTPromiseRejectBlock)rejecter;
-@end
 
 @interface ShareMenuReactView (TurboModule) <NativeShareMenuReactViewSpec>
 @end

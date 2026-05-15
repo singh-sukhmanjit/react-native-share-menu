@@ -3,10 +3,6 @@
 #import <RNShareMenuSpec/RNShareMenuSpec.h>
 #import <RNShareMenu/RNShareMenu-Swift.h>
 
-@interface ShareMenu : RCTEventEmitter
-- (void)getSharedText:(RCTResponseSenderBlock)callback;
-@end
-
 @interface ShareMenu (TurboModule) <NativeShareMenuSpec>
 @end
 
