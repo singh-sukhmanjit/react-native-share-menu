@@ -1,6 +1,7 @@
 #import <React/RCTEventEmitter.h>
 
 #import <RNShareMenuSpec/RNShareMenuSpec.h>
+#import <RNShareMenu/RNShareMenu-Swift.h>
 
 @class ShareMenu;
 
